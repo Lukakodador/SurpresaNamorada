@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Dia dos Namorados 💖</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #f8f6f1;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .gallery {
+            --d: 10s;
+            display: grid;
+            place-items: center;
+            width: 220px;
+            margin: 0 auto;
+        }
+
+        .gallery>img {
+            grid-area: 1/1;
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border: 10px solid #f2f2f2;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            z-index: 2;
+            animation: slide var(--d) infinite, z-order var(--d) infinite steps(1);
+        }
+
+        .gallery img:last-child {
+            animation-name: slide, z-order-last;
+        }
+
+        .gallery>img:nth-child(1) {
+            animation-delay: calc(0 * var(--d));
+            --r: 16deg;
+        }
+
+        .gallery>img:nth-child(2) {
+            animation-delay: calc(-0.2 * var(--d));
+            --r: -1deg;
+        }
+
+        .gallery>img:nth-child(3) {
+            animation-delay: calc(-0.4 * var(--d));
+            --r: -19deg;
+        }
+
+        .gallery>img:nth-child(4) {
+            animation-delay: calc(-0.6 * var(--d));
+            --r: 6deg;
+        }
+
+        .gallery>img:nth-child(5) {
+            animation-delay: calc(-0.8 * var(--d));
+            --r: -8deg;
+        }
+
+        @keyframes slide {
+            10% {
+                transform: translateX(120%) rotate(var(--r));
+            }
+
+            0%,
+            100%,
+            20% {
+                transform: translateX(0%) rotate(var(--r));
+            }
+        }
+
+        @keyframes z-order {
+
+            10%,
+            20% {
+                z-index: 1;
+            }
+
+            80% {
+                z-index: 2;
+            }
+        }
+
+        @keyframes z-order-last {
+
+            10%,
+            20% {
+                z-index: 1;
+            }
+
+            90% {
+                z-index: 2;
+            }
+        }
+
+        #hedlinecontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+
+        #shine {
+            font-size: 60px;
+            font-weight: bold;
+            color: transparent;
+            background: linear-gradient(to right, #222 0%, #fff 50%, #222 100%);
+            background-size: 150px;
+            background-repeat: no-repeat;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s infinite;
+            text-shadow: 0 0px 0px rgba(233, 85, 189, 0.419);
+        }
+
+        @keyframes shine {
+
+            0%,
+            10% {
+                background-position: -1000px;
+            }
+
+            20% {
+                background-position: top left;
+            }
+
+            90% {
+                background-position: top right;
+            }
+
+            100% {
+                background-position: 1000px;
+            }
+        }
+
+        #message {
+            font-size: 24px;
+            text-align: center;
+            color: #e91e63;
+            margin-top: 40px;
+            font-family: 'Opens Sans', sans-serif;
+        }
+
+        .arrow {
+            margin: 40px auto 0;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            color: #e91e63;
+            text-align: center;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* Parte 2 - Crescimento do Amor com gráfico */
+        #growth-section {
+            background: #fff0f6;
+            padding: 60px 20px;
+            text-align: center;
+            display: none;
+        }
+
+        #bar-graph {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            height: 250px;
+            max-width: 600px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .bar {
+            width: 60px;
+            background: #e91e63;
+            border-radius: 6px 6px 0 0;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            overflow: hidden;
+            height: 0;
+        }
+
+        .bar-label {
+            position: absolute;
+            top: 5%;
+            font-weight: bold;
+            color: #c2185b;
+            font-size: 16px;
+        }
+
+        #growth-title {
+            font-size: 24px;
+            color: #c2185b;
+            margin-bottom: 30px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #shine {
+                font-size: 22px;
+            }
+
+            .gallery {
+                width: 150px;
+                margin-left: 0;
+            }
+
+            .bar {
+                width: 20px;
+            }
+
+            .bar-label {
+                font-size: 12px;
+                top: 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="hedlinecontainer">
+        <div id="shine">Feliz Dia dos Namorados 💞</div>
+    </div>
+
+    <div class="gallery">
+        <img src="https://i.postimg.cc/8PQQdNRW/foto-No-Marzullo.jpg" alt="Foto No Marzullo">
+        <img src="https://i.postimg.cc/W4bh2Mt2/foto-Seus-Olhos.jpg" alt="Foto Seus Olhos">
+        <img src="https://i.postimg.cc/ncgk9hqb/no-Fullxico.jpg" alt="Foto No Fullxico">
+        <img src="https://i.postimg.cc/G2DBNbHY/shopping-Carnaval.jpg" alt="Foto Shopping Carnaval">
+        <img src="https://i.postimg.cc/Vkt3dTrg/em-Sepetiba.jpg" alt="Foto Em Sepetiba">
+    </div>
+
+    <div id="message"></div>
+
+    <div class="arrow" onclick="goToGrowth()">⬇</div>
+
+    <section id="growth-section">
+        <h2 id="growth-title">O crescimento do meu amor por você 💗</h2>
+        <div id="bar-graph">
+            <div class="bar" data-height="60" data-percentage="50%">
+                <div class="bar-label">Uma Semana</div>
+                <div class="percentage-growth">50%</div>
+            </div>
+            <div class="bar" data-height="100" data-percentage="100%">
+                <div class="bar-label">Um Mês</div>
+                <div class="percentage-growth">100%</div>
+            </div>
+            <div class="bar" data-height="160" data-percentage="200%">
+                <div class="bar-label">Seis Meses</div>
+                <div class="percentage-growth">200%</div>
+            </div>
+            <div class="bar" data-height="210" data-percentage="500%">
+                <div class="bar-label">Um Ano</div>
+                <div class="percentage-growth">500%</div>
+            </div>
+            <div class="bar" data-height="250" data-percentage="∞+">
+                <div class="bar-label">Para Sempre</div>
+                <div class="percentage-growth">∞+</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const text = "Eu te amo incondicionalmente! Obrigado por todos os momentos juntos. 💖";
+        let index = 0;
+        const speed = 60;
+
+        function typeMessage() {
+            if (index < text.length) {
+                document.getElementById("message").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeMessage, speed);
+            }
+        }
+
+        window.onload = typeMessage;
+
+        function goToGrowth() {
+            const section = document.getElementById('growth-section');
+            section.style.display = 'block';
+            section.scrollIntoView({ behavior: 'smooth' });
+
+            // Animar barras e porcentagens
+            const bars = document.querySelectorAll('.bar');
+            bars.forEach((bar, i) => {
+                const height = bar.getAttribute('data-height');
+                const percentageElement = bar.querySelector('.percentage-growth');
+
+                setTimeout(() => {
+                    bar.style.transition = 'height 1s ease';
+                    bar.style.height = height + 'px';
+                    bar.classList.add('animated'); // Adiciona classe para animar a porcentagem
+                }, i * 400); // Atraso para cada barra
+            });
+        }
+    </script>
+</body>
+
+</html>
